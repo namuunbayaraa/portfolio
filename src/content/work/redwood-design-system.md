@@ -1,7 +1,7 @@
 ---
 title: Redwood Design System
 publishDate: 2022-05-01 00:00:00
-img: /assets/redwood-gif.gif
+img: /assets/redwood.gif
 img_alt: Redwood DS Storybook
 description: |
   We built First Republic Bank's first design system

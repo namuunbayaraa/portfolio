@@ -4,7 +4,7 @@ publishDate: 2021-10-02 00:00:00
 img: /assets/eagleGO.png
 img_alt: EagleGO mobile design promo
 description: |
-  Mobile-first personalized banker's dashboard to track client relationships.
+  Mobile-first personalized banker dashboard
 tags:
   - Design
   - Dev
