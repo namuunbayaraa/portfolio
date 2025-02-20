@@ -7,19 +7,24 @@ const data = await queryDatabase();
 
 <div>
   {
-    data.results.map((page: any) => {
-      const title = page.properties.Title?.title?.[0]?.plain_text || "No title";
-      const description =
-        page.properties.Description?.rich_text?.[0]?.plain_text ||
-        "No description";
+    data.results && data.results.length > 0 ? (
+      data.results?.map((page: any) => {
+        const title =
+          page.properties.Title?.title?.[0]?.plain_text || "No title";
+        const description =
+          page.properties.Description?.rich_text?.[0]?.plain_text ||
+          "No description";
 
-      return (
-        <div class="page-item">
-          <h2>{title}</h2>
-          <p>{description}</p>
-        </div>
-      );
-    })
+        return (
+          <div class="page-item">
+            <h2>{title}</h2>
+            <p>{description}</p>
+          </div>
+        );
+      })
+    ) : (
+      <p class="no-posts">No blog posts found.</p>
+    )
   }
 </div>
 
@@ -29,5 +34,11 @@ const data = await queryDatabase();
     padding: 1rem;
     border: 1px solid #eee;
     border-radius: 4px;
+  }
+
+  .no-posts {
+    text-align: center;
+    padding: 2rem;
+    color: #666;
   }
 </style>
