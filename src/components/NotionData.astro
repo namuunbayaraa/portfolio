@@ -1,0 +1,33 @@
+---
+import { queryDatabase } from "../notion";
+
+// Fetch data in component
+const data = await queryDatabase();
+---
+
+<div>
+  {
+    data.results.map((page: any) => {
+      const title = page.properties.Title?.title?.[0]?.plain_text || "No title";
+      const description =
+        page.properties.Description?.rich_text?.[0]?.plain_text ||
+        "No description";
+
+      return (
+        <div class="page-item">
+          <h2>{title}</h2>
+          <p>{description}</p>
+        </div>
+      );
+    })
+  }
+</div>
+
+<style>
+  .page-item {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 1px solid #eee;
+    border-radius: 4px;
+  }
+</style>
