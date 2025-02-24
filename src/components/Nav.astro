@@ -5,13 +5,12 @@ import type { iconPaths } from "./IconPaths";
 
 /** Main menu items */
 const textLinks: { label: string; href: string }[] = [
-  { label: "Home", href: "/" },
+  { label: "About", href: "/" },
   { label: "Work", href: "/work/" },
-  { label: "About", href: "/about/" },
   { label: "Blog", href: "/blog/" },
 ];
 
-/** Icon links to social media — edit these with links to your profiles! */
+/** Icon links to social media — keep them for now! */
 const iconLinks: {
   label: string;
   href: string;
@@ -101,17 +100,6 @@ const isCurrentPage = (href: string) => {
       }
     </ul>
     <div class="menu-footer">
-      <div class="socials">
-        {
-          iconLinks.map(({ href, icon, label }) => (
-            <a href={href} class="social">
-              <span class="sr-only">{label}</span>
-              <Icon icon={icon} />
-            </a>
-          ))
-        }
-      </div>
-
       <div class="theme-toggle">
         <ThemeToggle />
       </div>

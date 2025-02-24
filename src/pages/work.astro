@@ -2,10 +2,7 @@
 import { getCollection } from "astro:content";
 
 import BaseLayout from "../layouts/BaseLayout.astro";
-
-import ContactCTA from "../components/ContactCTA.astro";
 import PortfolioPreview from "../components/PortfolioPreview.astro";
-import Hero from "../components/Hero.astro";
 import Grid from "../components/Grid.astro";
 
 const projects = (await getCollection("work")).sort(
@@ -19,11 +16,10 @@ const projects = (await getCollection("work")).sort(
 >
   <div class="stack gap-20">
     <main class="wrapper stack gap-8">
-      <Hero
-        title="My Work"
-        tagline="See my most recent projects below to get an idea of my past experience."
-        align="start"
-      />
+      <div class="container">
+        See my most recent projects below to get an idea of my past experience.
+      </div>
+
       <Grid variant="offset">
         {
           projects.map((project) => (
@@ -34,6 +30,12 @@ const projects = (await getCollection("work")).sort(
         }
       </Grid>
     </main>
-    <ContactCTA />
   </div>
 </BaseLayout>
+<style>
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+</style>
