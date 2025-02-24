@@ -5,7 +5,6 @@
 // Component Imports
 import MainHead from "../components/MainHead.astro";
 import Nav from "../components/Nav.astro";
-import Footer from "../components/Footer.astro";
 import Analytics from "@vercel/analytics/astro";
 
 interface Props {
@@ -24,7 +23,6 @@ const { title, description } = Astro.props;
     <div class="stack backgrounds">
       <Nav />
       <slot />
-      <Footer />
     </div>
 
     <script>
@@ -35,21 +33,6 @@ const { title, description } = Astro.props;
     </script>
 
     <style>
-      :root {
-        --_placeholder-bg: linear-gradient(transparent, transparent);
-        --bg-image-main: url("/assets/backgrounds/bg-main-light-800w.jpg");
-        --bg-image-main-curves: url("/assets/backgrounds/bg-main-light.svg");
-        --bg-image-subtle-1: var(--_placeholder-bg);
-        --bg-image-subtle-2: var(--_placeholder-bg);
-        --bg-image-footer: var(--_placeholder-bg);
-        --bg-svg-blend-mode: overlay;
-        --bg-blend-mode: darken;
-        --bg-image-aspect-ratio: 2.25;
-        --bg-scale: 1.68;
-        --bg-aspect-ratio: calc(var(--bg-image-aspect-ratio) / var(--bg-scale));
-        --bg-gradient-size: calc(var(--bg-scale) * 100%);
-      }
-
       :root.theme-dark {
         --bg-image-main: url("/assets/backgrounds/bg-main-dark-800w.jpg");
         --bg-image-main-curves: url("/assets/backgrounds/bg-main-dark.svg");
