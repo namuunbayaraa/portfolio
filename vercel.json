@@ -1,5 +1,0 @@
-{
-  "env": {
-    "NOTION_DATABASE_ID": "@notion-database-id"
-  }
-}
