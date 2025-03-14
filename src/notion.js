@@ -7,7 +7,7 @@ dotenv.config();
 const notion = new Client({
   auth: process.env.NOTION_API_KEY,
 });
-console.log("NOTION_DATABASE_ID:", import.meta.env.NOTION_DATABASE_ID);
+
 export async function queryDatabase() {
   try {
     const response = await notion.databases.query({
@@ -18,6 +18,7 @@ export async function queryDatabase() {
         Expires: "0",
       },
     });
+
     return response;
   } catch (error) {
     console.error("Error querying database:", error);
