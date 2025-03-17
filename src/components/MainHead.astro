@@ -6,10 +6,8 @@ interface Props {
   description?: string | undefined;
 }
 
-const {
-  title = "Namuun Bayaraa: Personal Site",
-  description = "The personal site of Namuun Bayaraa",
-} = Astro.props;
+const { title = "Namuun Bayaraa", description = "Namuun Bayaraa" } =
+  Astro.props;
 ---
 
 <meta charset="UTF-8" />
@@ -18,7 +16,7 @@ const {
 <meta name="generator" content={Astro.generator} />
 <title>{title}</title>
 
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/svg+xml" href="/n.jpg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
