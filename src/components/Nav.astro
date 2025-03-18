@@ -1,12 +1,18 @@
 ---
+import { RequestTimeoutError } from "@notionhq/client";
 import Icon from "./Icon.astro";
 import type { iconPaths } from "./IconPaths";
 
 /** Main menu items */
-const textLinks: { label: string; href: string }[] = [
+const textLinks: { label: string; href: string; target?: string }[] = [
   { label: "About", href: "/" },
   { label: "Work", href: "/work/" },
   { label: "Blog", href: "/blog/" },
+  {
+    label: "Resume",
+    target: "_blank",
+    href: "https://docs.google.com/document/d/1Q5MaxIze-C6Rif7gkuK4EdIEj6q4EKOP3uabhEQOQyM/edit?usp=sharing",
+  },
 ];
 
 /** Test if a link is pointing to the current page. */
@@ -26,10 +32,11 @@ const isCurrentPage = (href: string) => {
     <div id="menu-content">
       <ul class="nav-items">
         {
-          textLinks.map(({ label, href }) => (
+          textLinks.map(({ label, href, target }) => (
             <li>
               <a
                 aria-current={isCurrentPage(href) ? "page" : null}
+                target={target}
                 class="link"
                 href={href}
               >
