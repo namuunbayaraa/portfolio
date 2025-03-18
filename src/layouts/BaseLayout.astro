@@ -21,7 +21,7 @@ const { title, description } = Astro.props;
     <MainHead title={title} description={description} />
   </head>
   <body>
-    <div class="stack backgrounds">
+    <div class="stack backgrounds container">
       <Nav />
       <slot />
       <Footer />
@@ -95,6 +95,11 @@ const { title, description } = Astro.props;
           /*header1*/ var(--bg-svg-blend-mode),
           /*header2*/ normal,
           /*base*/ normal;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 40px 20px;
       }
       @media (forced-colors: active) {
         /* Deactivate custom backgrounds for high contrast users. */
