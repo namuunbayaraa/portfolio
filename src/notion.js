@@ -1,5 +1,4 @@
 import { Client } from "@notionhq/client";
-import { defineCollection, z } from "astro:content";
 import dotenv from "dotenv";
 dotenv.config();
 

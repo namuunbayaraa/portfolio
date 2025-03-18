@@ -14,11 +14,16 @@ const data = await queryDatabase();
         const description =
           page.properties.Description?.rich_text?.[0]?.plain_text ||
           "No description";
+        const link = page.url || "No link";
 
         return (
           <div class="page-item">
-            <h2>{title}</h2>
-            <p>{description}</p>
+            <h4>{title}</h4>
+            <div>{description}</div>
+            <div>
+              Read More
+              <a href={link}>here</a>
+            </div>
           </div>
         );
       })
@@ -32,7 +37,6 @@ const data = await queryDatabase();
   .page-item {
     margin-bottom: 1rem;
     padding: 1rem;
-    border: 1px solid #eee;
     border-radius: 4px;
   }
 
